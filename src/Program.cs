@@ -1,3 +1,5 @@
+using OrderingPlatform.Endpoints.Categories;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
@@ -12,5 +14,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.MapMethods(CategoryPost.Template, CategoryPost.Method, CategoryPost.Handle);
 
 app.Run();
