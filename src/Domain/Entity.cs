@@ -1,8 +1,9 @@
-﻿using OrderingPlatform.Domain.Products;
+﻿using Flunt.Notifications;
+using OrderingPlatform.Domain.Products;
 
 namespace OrderingPlatform.Domain;
 
-public abstract class Entity
+public abstract class Entity : Notifiable<Notification>
 {
     public Entity()
     {
@@ -15,5 +16,5 @@ public abstract class Entity
     public DateTime CreatedOn { get; set; }
     public string EditedBy { get; set; }
     public DateTime EditedOn { get; set; }
-    public bool Active { get; set; } = true;
+    public bool Active { get; set; }
 }

@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "5owTQsA07/tByIKLkGl6zeJiqEhDHHuGPmYfj3i7ZPiXDH4clHQJJyPwA3iDR1gBdySZ3GFVYMJ/HyYXovxj5Q==",
+  "dgSpecHash": "HtNEeHXYgGzLorAVkq7Q8agYhJoE5DHHaIgfHckiGuMYNycw7tn061p5rh1Vy8x9Wq2hUhk3PaTObaTExqX4Hg==",
   "success": true,
   "projectFilePath": "C:\\Users\\joaon\\OneDrive\\Documentos\\OrderingPlatformCourse\\src\\OrderingPlatform.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\joaon\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\joaon\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
+    "C:\\Users\\joaon\\.nuget\\packages\\flunt\\2.0.5\\flunt.2.0.5.nupkg.sha512",
     "C:\\Users\\joaon\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\joaon\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\joaon\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
