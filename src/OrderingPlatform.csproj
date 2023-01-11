@@ -16,12 +16,4 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
-  <ItemGroup>
-    <EditorConfigFiles Remove="C:\Users\joaon\OneDrive\Documentos\OrderingPlatformCourse\src\.editorconfig" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="C:\Users\joaon\OneDrive\Documentos\OrderingPlatformCourse\src\.editorconfig" />
-  </ItemGroup>
-
 </Project>
