@@ -1,13 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "JbWWDboiMyjQt5m35fFPwhcoxJk+t6APxI3wbUJazLEXPt6yi54goCh/EoqEV7On7zXcep1TQWMZnT/9Hr1M5g==",
+  "dgSpecHash": "vsk9u3hqb31Q40Hm1YOdZlBrySe86BB4oSQ+VbgIjk5ci4lfExdw0qZS4cBjy50b2BVtSHAVVetYSmiLH8q/7w==",
   "success": true,
   "projectFilePath": "C:\\Users\\joaon\\OneDrive\\Documentos\\OrderingPlatformCourse\\src\\OrderingPlatform.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\joaon\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\joaon\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
+    "C:\\Users\\joaon\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\joaon\\.nuget\\packages\\flunt\\2.0.5\\flunt.2.0.5.nupkg.sha512",
     "C:\\Users\\joaon\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\joaon\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.13\\microsoft.aspnetcore.authentication.jwtbearer.6.0.13.nupkg.sha512",
     "C:\\Users\\joaon\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.13\\microsoft.aspnetcore.cryptography.internal.6.0.13.nupkg.sha512",
     "C:\\Users\\joaon\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.13\\microsoft.aspnetcore.cryptography.keyderivation.6.0.13.nupkg.sha512",
     "C:\\Users\\joaon\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\6.0.13\\microsoft.aspnetcore.identity.entityframeworkcore.6.0.13.nupkg.sha512",
