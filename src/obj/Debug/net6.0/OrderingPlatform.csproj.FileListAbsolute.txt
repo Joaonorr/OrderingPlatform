@@ -92,3 +92,4 @@ C:\Users\joaon\OneDrive\Documentos\OrderingPlatformCourse\src\bin\Debug\net6.0\M
 C:\Users\joaon\OneDrive\Documentos\OrderingPlatformCourse\src\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\joaon\OneDrive\Documentos\OrderingPlatformCourse\src\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\joaon\OneDrive\Documentos\OrderingPlatformCourse\src\bin\Debug\net6.0\Dapper.dll
+C:\Users\joaon\OneDrive\Documentos\OrderingPlatformCourse\src\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
