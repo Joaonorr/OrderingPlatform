@@ -14,8 +14,15 @@ public static class EmployeeGetAll
     public static Delegate Handle => Action;
 
     [Authorize]
-    public static IResult Action(int? page, int? rows, QueryGetAllEmployeeWithClaimName query)
+    public static async Task<IResult> Action(int? page, int? rows, QueryGetAllEmployeeWithClaimName query)
     {
-       return Results.Ok(query.ExecuteQuery(page.Value, rows.Value));
+        if (page == null)
+            page = 1;
+
+        if (rows == null)
+            rows = 10;
+
+        var result = await query.ExecuteQuery(page.Value, rows.Value);
+        return Results.Ok(result);
     }
 }
