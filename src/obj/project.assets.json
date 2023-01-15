@@ -4168,11 +4168,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\joaon\\OneDrive\\Documentos\\OrderingPlatformCourse\\src\\OrderingPlatform.csproj",
+      "projectUniqueName": "C:\\Users\\joaon\\OneDrive\\Documentos\\OrderingPlatform\\src\\OrderingPlatform.csproj",
       "projectName": "OrderingPlatform",
-      "projectPath": "C:\\Users\\joaon\\OneDrive\\Documentos\\OrderingPlatformCourse\\src\\OrderingPlatform.csproj",
+      "projectPath": "C:\\Users\\joaon\\OneDrive\\Documentos\\OrderingPlatform\\src\\OrderingPlatform.csproj",
       "packagesPath": "C:\\Users\\joaon\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\joaon\\OneDrive\\Documentos\\OrderingPlatformCourse\\src\\obj\\",
+      "outputPath": "C:\\Users\\joaon\\OneDrive\\Documentos\\OrderingPlatform\\src\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\joaon\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4255,7 +4255,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

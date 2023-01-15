@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vsk9u3hqb31Q40Hm1YOdZlBrySe86BB4oSQ+VbgIjk5ci4lfExdw0qZS4cBjy50b2BVtSHAVVetYSmiLH8q/7w==",
+  "dgSpecHash": "qxE1aUJoehY1CB8cLZc0a1aW2GA65vc/40Tae5LtBml0qkK6nCPXgRzHRwQml8H4q83fOD8YyTkf3VhvkNBwBQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\joaon\\OneDrive\\Documentos\\OrderingPlatformCourse\\src\\OrderingPlatform.csproj",
+  "projectFilePath": "C:\\Users\\joaon\\OneDrive\\Documentos\\OrderingPlatform\\src\\OrderingPlatform.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\joaon\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\joaon\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

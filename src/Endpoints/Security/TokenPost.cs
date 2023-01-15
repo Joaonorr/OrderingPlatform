@@ -14,10 +14,7 @@ public static class TokenPost
     public static Delegate Handle => Action;
 
     [AllowAnonymous]
-    public static IResult Action(
-        LoginRequest loginRequest, 
-        UserManager<IdentityUser> userManager, 
-        IConfiguration configuration
+    public static async Task<IResult> Action(LoginRequest loginRequest, UserManager<IdentityUser> userManager, IConfiguration configuration
     )
     {
         var user = userManager.FindByEmailAsync(loginRequest.Email).Result;
@@ -28,17 +25,18 @@ public static class TokenPost
         if (! userManager.CheckPasswordAsync(user, loginRequest.Password).Result)
             return Results.BadRequest();
 
+        var claims = await userManager.GetClaimsAsync(user);
+        var Subject = new ClaimsIdentity(new Claim[] 
+        {
+            new Claim(ClaimTypes.Email, loginRequest.Email),
+            new Claim(ClaimTypes.NameIdentifier, user.Id)
+        });
+        Subject.AddClaims(claims);
+
         var key = Encoding.ASCII.GetBytes(configuration["JwtBearerTokenSettings:SecretKey"]);
         var tokenDescription = new SecurityTokenDescriptor
         {
-            Subject = new ClaimsIdentity
-            (
-                new Claim[]
-                {
-                    new Claim(ClaimTypes.Email, loginRequest.Email)
-                }
-            ),
-
+            Subject = Subject,
             SigningCredentials = new SigningCredentials
             (
                 new SymmetricSecurityKey(key),
