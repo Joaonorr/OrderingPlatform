@@ -4,7 +4,9 @@ using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Data.SqlClient;
 using Microsoft.IdentityModel.Tokens;
+using OrderingPlatform.Domain.Users;
 using OrderingPlatform.Endpoints.Categories;
+using OrderingPlatform.Endpoints.Clients;
 using OrderingPlatform.Endpoints.Employees;
 using OrderingPlatform.Endpoints.Products;
 using OrderingPlatform.Endpoints.Security;
@@ -75,6 +77,7 @@ builder.Services.AddAuthentication(x =>
 });
 
 builder.Services.AddScoped<QueryGetAllEmployeeWithClaimName>();
+builder.Services.AddScoped<UserCreator>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -96,6 +99,8 @@ app.MapMethods(CategoryPut.Template, CategoryPut.Methods, CategoryPut.Handle);
 
 app.MapMethods(EmployeePost.Template, EmployeePost.Method, EmployeePost.Handle);
 app.MapMethods(EmployeeGetAll.Template, EmployeeGetAll.Method, EmployeeGetAll.Handle);
+
+app.MapMethods(ClientPost.Template, ClientPost.Method, ClientPost.Handle);
 
 app.MapMethods(ProductGetAll.Template, ProductGetAll.Method, ProductGetAll.Handle);
 app.MapMethods(ProductPost.Template, ProductPost.Method, ProductPost.Handle);

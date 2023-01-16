@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using OrderingPlatform.Domain.Users;
+using OrderingPlatform.Endpoints.Clients;
 using OrderingPlatform.Infra.Data;
 using System.Security.Claims;
 
@@ -13,14 +15,9 @@ public static class EmployeePost
 
     [Authorize(Policy = "EmployeePolicy")]
     public static async Task<IResult> Action(
-        EmployeeRequest employeeRequest, HttpContext http, UserManager<IdentityUser> userManager)
+        EmployeeRequest employeeRequest, HttpContext http, UserCreator userCreator)
     {
         var userId = http.User.Claims.First(c => c.Type == ClaimTypes.NameIdentifier).Value;
-        var user = new IdentityUser{ UserName = employeeRequest.Email, Email = employeeRequest.Email };
-        var result = await userManager.CreateAsync(user, employeeRequest.Password);
-
-        if (!result.Succeeded)
-            return Results.ValidationProblem(result.Errors.ConvertToProblemDetails());
 
         var claims = new List<Claim>()
         {
@@ -29,12 +26,13 @@ public static class EmployeePost
             new Claim("CreateBy", userId)
         };
 
-        var claimResult = await userManager.AddClaimsAsync(user, claims);
+        (IdentityResult identityResult, string UserId) result =
+        await userCreator.Create(employeeRequest.Email, employeeRequest.Password, claims);
 
-        if (!claimResult.Succeeded)
-            return Results.BadRequest(result.Errors.ConvertToProblemDetails());
+        if (!result.identityResult.Succeeded)
+            return Results.ValidationProblem(result.identityResult.Errors.ConvertToProblemDetails());
 
 
-        return Results.Created($"/employee/{user.Id}", user.Id);
+        return Results.Created($"/employee/{result.UserId}", result.UserId);
     }
 }
