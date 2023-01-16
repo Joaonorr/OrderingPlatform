@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing.Template;
 using OrderingPlatform.Infra.Data;
 
@@ -10,6 +11,7 @@ public static class ProductGetById
     public static string[] Method => new string[] { HttpMethod.Get.ToString() };
     public static Delegate Handle => Action;
 
+    [Authorize(Policy = "EmployeePolicy")]
     public static IResult Action([FromRoute] Guid id, ApplicationDbContext context)
     {
         var product = context.Products.First(p => p.Id == id);

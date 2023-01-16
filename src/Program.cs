@@ -100,6 +100,7 @@ app.MapMethods(EmployeeGetAll.Template, EmployeeGetAll.Method, EmployeeGetAll.Ha
 app.MapMethods(ProductGetAll.Template, ProductGetAll.Method, ProductGetAll.Handle);
 app.MapMethods(ProductPost.Template, ProductPost.Method, ProductPost.Handle);
 app.MapMethods(ProductGetById.Template, ProductGetById.Method, ProductGetById.Handle);
+app.MapMethods(ProductGetShowCase.Template, ProductGetShowCase.Method, ProductGetShowCase.Handle);
 
 app.MapMethods(TokenPost.Template, TokenPost.Method, TokenPost.Handle);
 

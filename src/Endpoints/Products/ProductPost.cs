@@ -8,7 +8,7 @@ namespace OrderingPlatform.Endpoints.Products;
 
 public static class ProductPost
 {
-    public static string Template => "/products";
+    public static string Template => "/product";
     public static string[] Method => new string[] {HttpMethod.Post.ToString() };
     public static Delegate Handle => Action;
 

@@ -1,4 +1,5 @@
-﻿using OrderingPlatform.Infra.Data;
+﻿using Microsoft.AspNetCore.Authorization;
+using OrderingPlatform.Infra.Data;
 
 namespace OrderingPlatform.Endpoints.Categories;
 
@@ -8,6 +9,7 @@ public class CategoryGetAll
     public static string[] Methods => new string[] { HttpMethod.Get.ToString() };
     public static Delegate Handle => Action;
 
+    [Authorize(Policy = "EmployeePolicy")]
     public static IResult Action(ApplicationDbContext context)
     {
         var categories = context.Categories.ToList();
