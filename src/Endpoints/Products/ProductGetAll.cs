@@ -5,7 +5,7 @@ namespace OrderingPlatform.Endpoints.Products;
 
 public static class ProductGetAll
 {
-    public static string Template => "/products";
+    public static string Template => "/product";
     public static string[] Method => new string[] { HttpMethod.Get.ToString() };
     public static Delegate Handle => Action;
 

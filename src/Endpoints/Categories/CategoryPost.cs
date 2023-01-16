@@ -7,7 +7,7 @@ namespace OrderingPlatform.Endpoints.Categories;
 
 public class CategoryPost
 {
-    public static string Template => "/categories";
+    public static string Template => "/category";
     public static string[] Method => new String[] { HttpMethod.Post.ToString() };
     public static Delegate Handle => Action;
 

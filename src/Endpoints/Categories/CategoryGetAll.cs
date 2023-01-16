@@ -4,7 +4,7 @@ namespace OrderingPlatform.Endpoints.Categories;
 
 public class CategoryGetAll
 {
-    public static string Template => "categories";
+    public static string Template => "category";
     public static string[] Methods => new string[] { HttpMethod.Get.ToString() };
     public static Delegate Handle => Action;
 

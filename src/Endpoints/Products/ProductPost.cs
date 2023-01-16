@@ -21,10 +21,10 @@ public static class ProductPost
             .Categories.FirstOrDefaultAsync(c => c.Id == productRequest.CategoryId);
 
         if (category == null)
-            return Results.NotFound("Category Not Found");
+            return Results.NotFound("category not found");
 
         var product = new Product(
-             productRequest.Name, category, productRequest.Description, productRequest.HasStoock, userId
+             productRequest.Name, category, productRequest.Description, productRequest.Price, productRequest.HasStoock, userId
         );
 
         if (!product.IsValid)

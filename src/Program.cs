@@ -99,23 +99,25 @@ app.MapMethods(EmployeeGetAll.Template, EmployeeGetAll.Method, EmployeeGetAll.Ha
 
 app.MapMethods(ProductGetAll.Template, ProductGetAll.Method, ProductGetAll.Handle);
 app.MapMethods(ProductPost.Template, ProductPost.Method, ProductPost.Handle);
+app.MapMethods(ProductGetById.Template, ProductGetById.Method, ProductGetById.Handle);
 
 app.MapMethods(TokenPost.Template, TokenPost.Method, TokenPost.Handle);
 
-//app.UseExceptionHandler("/error");
-//app.Map("/error", (HttpContext http) => {
+app.UseExceptionHandler("/error");
+app.Map("/error", (HttpContext http) =>
+{
 
-//    var error = http.Features?.Get<IExceptionHandlerFeature>()?.Error;
+    var error = http.Features?.Get<IExceptionHandlerFeature>()?.Error;
 
-//    if(error != null)
-//    {
-//        if(error is SqlException)
-//            return Results.Problem(title: "Database out", statusCode: 500);
-//        else if(error is BadHttpRequestException)
-//            return Results.Problem(title: "Error to convert data to other type. See all the information sent", statusCode: 500);
-//    }
+    if (error != null)
+    {
+        if (error is SqlException)
+            return Results.Problem(title: "Database out", statusCode: 500);
+        else if (error is BadHttpRequestException)
+            return Results.Problem(title: "Error to convert data to other type. See all the information sent", statusCode: 500);
+    }
 
-//    return Results.Problem(title: "An error ocurred", statusCode: 500);
-//});
+    return Results.Problem(title: "An error ocurred", statusCode: 500);
+});
 
 app.Run();

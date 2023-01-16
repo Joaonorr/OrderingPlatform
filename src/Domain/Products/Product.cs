@@ -8,15 +8,17 @@ public class Product : Entity
     public string Description { get; set; }
     public Guid CategoryId { get; set; }
     public Category Category { get; set; }
+    public decimal Price { get; private set; }
     public bool HasStoock { get; set; }
     public bool Active { get; private set; } = true;
 
     public Product() { }
-    public Product(string name, Category category, string description, bool hasStoock, string createdBy)
+    public Product(string name, Category category, string description, decimal price, bool hasStoock, string createdBy)
     {
         Name = name;
         Category = category;
         Description = description;
+        Price = price;
         HasStoock = hasStoock;
 
         CreatedBy = createdBy;
@@ -34,7 +36,7 @@ public class Product : Entity
             .IsGreaterOrEqualsThan(Name, 3, "Name")
             .IsNotNullOrEmpty(Description, "Description")
             .IsGreaterOrEqualsThan(Description, 3, "Description")
-            .IsNotNull(Category, "Category")
+            .IsNotNull(Category, "Category", "Category not found")
             .IsNotNullOrEmpty(CreatedBy, "CreatedBy")
             .IsNotNullOrEmpty(EditedBy, "EditedBy");
         AddNotifications(contract);
