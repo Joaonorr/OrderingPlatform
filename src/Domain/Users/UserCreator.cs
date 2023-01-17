@@ -15,7 +15,7 @@ public class UserCreator
     public async Task<(IdentityResult, string)> Create(string email, string password, List<Claim> claims)
     {
         var newUser = new IdentityUser { UserName = email, Email = email };
-        var result = await _userManager.CreateAsync(newUser);
+        var result = await _userManager.CreateAsync(newUser, password);
         
         if (!result.Succeeded) 
             return (result, string.Empty); 

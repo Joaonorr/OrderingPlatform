@@ -1,4 +1,5 @@
 ﻿using Flunt.Validations;
+using OrderingPlatform.Domain.Orders;
 
 namespace OrderingPlatform.Domain.Products;
 
@@ -11,6 +12,7 @@ public class Product : Entity
     public decimal Price { get; private set; }
     public bool HasStoock { get; set; }
     public bool Active { get; private set; } = true;
+    public ICollection<Order> Orders { get; private set; }
 
     public Product() { }
     public Product(string name, Category category, string description, decimal price, bool hasStoock, string createdBy)

@@ -8,6 +8,7 @@ using OrderingPlatform.Domain.Users;
 using OrderingPlatform.Endpoints.Categories;
 using OrderingPlatform.Endpoints.Clients;
 using OrderingPlatform.Endpoints.Employees;
+using OrderingPlatform.Endpoints.Orders;
 using OrderingPlatform.Endpoints.Products;
 using OrderingPlatform.Endpoints.Security;
 using OrderingPlatform.Infra.Data;
@@ -101,11 +102,14 @@ app.MapMethods(EmployeePost.Template, EmployeePost.Method, EmployeePost.Handle);
 app.MapMethods(EmployeeGetAll.Template, EmployeeGetAll.Method, EmployeeGetAll.Handle);
 
 app.MapMethods(ClientPost.Template, ClientPost.Method, ClientPost.Handle);
+app.MapMethods(ClientGet.Template, ClientGet.Method, ClientGet.Handle);
 
 app.MapMethods(ProductGetAll.Template, ProductGetAll.Method, ProductGetAll.Handle);
 app.MapMethods(ProductPost.Template, ProductPost.Method, ProductPost.Handle);
 app.MapMethods(ProductGetById.Template, ProductGetById.Method, ProductGetById.Handle);
 app.MapMethods(ProductGetShowCase.Template, ProductGetShowCase.Method, ProductGetShowCase.Handle);
+
+app.MapMethods(OrderPost.Template, OrderPost.Method, OrderPost.Handle);
 
 app.MapMethods(TokenPost.Template, TokenPost.Method, TokenPost.Handle);
 
