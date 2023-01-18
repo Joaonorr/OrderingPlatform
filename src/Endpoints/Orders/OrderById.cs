@@ -28,16 +28,27 @@ public static class OrderById
 
         var userType = httpContext.User.Claims.First(c => c.Type == "UserType").Value;
 
+        
+
         if ( userType == "Employee")
-            return Results.Ok(order);
+        {
+            var orderResponse = 
+                new OrderResponse(order.Id, new Guid(order.ClientId), order.Products, order.Total, order.DeliveryAddress);
 
-
-        //var userId = httpContext.User.Claims.First(c => c.Type == ClaimTypes.NameIdentifier).Value;
+            return Results.Ok(orderResponse);
+        }
+        
 
         Guid userId = new Guid(httpContext.User.Claims.First(c => c.Type == ClaimTypes.NameIdentifier).Value);
 
         if ( id.Equals(order.Id) && userType == "Client")
-            return Results.Ok(order);
+        {
+            var orderResponse = 
+                new OrderResponse(order.Id, new Guid(order.ClientId), order.Products, order.Total, order.DeliveryAddress);
+
+            return Results.Ok(orderResponse);
+        }
+        
 
         return Results.Problem("User does not have permission to access this route", statusCode: 401);
     }
