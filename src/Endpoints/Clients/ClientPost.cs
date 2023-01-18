@@ -20,6 +20,7 @@ public class ClientPost
         {
             new Claim("Cpf", clientRequest.Cpf),
             new Claim("Name", clientRequest.Name),
+            new Claim("UserType", "Client")
         };
 
         (IdentityResult identityResult, string UserId) result =

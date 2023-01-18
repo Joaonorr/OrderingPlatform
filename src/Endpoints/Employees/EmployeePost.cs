@@ -23,7 +23,8 @@ public static class EmployeePost
         {
             new Claim("EmployeeCode", employeeRequest.employCode),
             new Claim("Name", employeeRequest.Name),
-            new Claim("CreateBy", userId)
+            new Claim("CreateBy", userId),
+            new Claim("UserType", "Employee")
         };
 
         (IdentityResult identityResult, string UserId) result =

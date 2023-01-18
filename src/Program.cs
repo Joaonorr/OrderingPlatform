@@ -53,6 +53,8 @@ builder.Services.AddAuthorization(options =>
     //  .Build();
     options.AddPolicy("EmployeePolicy", p =>
             p.RequireAuthenticatedUser().RequireClaim("EmployeeCode"));
+    options.AddPolicy("SearchPolicy", p =>
+            p.RequireAuthenticatedUser().RequireClaim("UserType"));
 });
 
 builder.Services.AddAuthentication(x =>
@@ -110,6 +112,7 @@ app.MapMethods(ProductGetById.Template, ProductGetById.Method, ProductGetById.Ha
 app.MapMethods(ProductGetShowCase.Template, ProductGetShowCase.Method, ProductGetShowCase.Handle);
 
 app.MapMethods(OrderPost.Template, OrderPost.Method, OrderPost.Handle);
+app.MapMethods(OrderById.Template, OrderById.Method, OrderById.Handle);
 
 app.MapMethods(TokenPost.Template, TokenPost.Method, TokenPost.Handle);
 

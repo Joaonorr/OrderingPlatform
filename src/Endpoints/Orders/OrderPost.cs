@@ -31,6 +31,9 @@ public static class OrderPost
         if (!order.IsValid)        
             return Results.ValidationProblem(order.Notifications.ConvertToProblemDetails());
 
+        applicationDbContext.Orders.Add(order);
+        applicationDbContext.SaveChanges();
+
         return Results.Created($"/order/{order.Id}", order.Id);
     }
 }
